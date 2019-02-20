@@ -8,13 +8,13 @@
 
 
 <script>
-import TodoItem from './TodoItem.vue';
+import TodoItem from './TodoItem.vue'; //import Component Todo item 
 export default {
-    name: "Todos",
+    name: "Todos", // Nama Komponen
     components: {
-        TodoItem
+        TodoItem // Menambahkan Komponen Hasil Import
     },
-    props: ["todos"]
+    props: ["todos"] //Tambah Props todos untuk menyimpan Value
 }
 </script>
 

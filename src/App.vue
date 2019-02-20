@@ -7,20 +7,20 @@
 </template>
 
 <script>
-import Header from './components/layouts/Header';
-import Todos from './components/Todos';
-import AddTodo from './components/AddTodo';
+import Header from './components/layouts/Header'; //import Komponen Header
+import Todos from './components/Todos'; //import Komponen Header
+import AddTodo from './components/AddTodo'; //import Komponen Header
 
 export default {
   name: 'app',
   components: {
-    Header,
-    Todos,
-    AddTodo
+    Header, //Componen Header hasil import
+    Todos, //Componen Todos hasil import
+    AddTodo //Componen AddTodo hasil import
   },
   data(){
     return {
-      todos: [
+      todos: [ //dummy data todo awal
         {
           id: 1,
           title: "Percobaan 1",
@@ -40,10 +40,10 @@ export default {
     }
   },
   methods: {
-    deleteTodo(id){
+    deleteTodo(id){ //method untuk hapus Todo
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
-    addTodo(newTodo){
+    addTodo(newTodo){ //method untuk tambah Todo
       this.todos = [...this.todos, newTodo];
     }
   }

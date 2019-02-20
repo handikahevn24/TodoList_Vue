@@ -16,13 +16,13 @@ export default {
     methods: {
         async markCompleted(){
             this.todo.completed = !this.todo.completed;
-        }
-    }    
+        } //Akhir dari fungsi markCompleted()
+    } // Method    
 }
 </script>
 
 
-<style scoped>
+<style scoped> 
     .todo-item {
         background: #fafafa;
         padding: 10px;
