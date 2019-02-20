@@ -10,6 +10,7 @@
 import Header from './components/layouts/Header'; //import Komponen Header
 import Todos from './components/Todos'; //import Komponen Header
 import AddTodo from './components/AddTodo'; //import Komponen Header
+import axios from 'axios';
 
 export default {
   name: 'app',
@@ -20,23 +21,7 @@ export default {
   },
   data(){
     return {
-      todos: [ //dummy data todo awal
-        {
-          id: 1,
-          title: "Percobaan 1",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Percobaan 2",
-          completed: false
-        },
-        {
-          id: 3,
-          title: "Percobaan 3",
-          completed: false
-        },
-      ] //todos
+      todos: [] 
     }
   },
   methods: {
@@ -44,8 +29,20 @@ export default {
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
     addTodo(newTodo){ //method untuk tambah Todo
-      this.todos = [...this.todos, newTodo];
+
+      const { title, completed } = newTodo;
+      
+      axios.post('https://jsonplaceholder.typicode.com/todos', {
+        title, completed
+      })
+      .then(res => this.todos = [...this.todos, res.data])
+      .catch(err => console.log(err));
     }
+  },
+  created() {
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+    .then(res => this.todos = res.data)
+    .catch(err => console.log(err));
   }
 }
 </script>
