@@ -1,4 +1,5 @@
-# app1
+<<<<<<< HEAD
+# TodoList Vue
 
 ## Project setup
 ```
@@ -27,3 +28,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# TodoList_Vue
+Hasil Latihan TodoList dengan Vue Js
+>>>>>>> 623088b4d49ff272ceddcddae6b7bc0e31e1a211
